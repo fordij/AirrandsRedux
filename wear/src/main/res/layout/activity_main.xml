@@ -85,6 +85,17 @@
                     app:layout_constraintStart_toStartOf="@+id/switch4"
                     app:layout_constraintTop_toBottomOf="@+id/switch4" />
 
+                <Switch
+                    android:id="@+id/switch6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/switch5"
+                    app:layout_constraintTop_toBottomOf="@+id/switch5"
+                    tools:visibility="invisible" />
+
                 <Button
                     android:id="@+id/getButton"
                     android:layout_width="54dp"

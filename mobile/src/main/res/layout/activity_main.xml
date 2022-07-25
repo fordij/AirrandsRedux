@@ -12,17 +12,10 @@
         android:layout_height="53dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="36dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_airrands" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(working title)"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/listInput"
@@ -30,18 +23,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:ems="10"
-        android:hint="To-do"
+        android:hint="@string/to_do"
         android:inputType="textLongMessage|textAutoCorrect|text"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/listButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:text="Add"
+        android:text="@string/add"
         app:layout_constraintStart_toEndOf="@+id/listInput"
         app:layout_constraintTop_toTopOf="@+id/listInput" />
 
@@ -66,8 +60,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Send to watch"
+        android:text="@string/send_to_watch"
         app:layout_constraintStart_toStartOf="@+id/toDos"
         app:layout_constraintTop_toBottomOf="@+id/toDos" />
+
+    <Button
+        android:id="@+id/signButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="@string/action_sign_in"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
