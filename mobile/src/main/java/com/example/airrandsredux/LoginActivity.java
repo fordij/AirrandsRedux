@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 public class LoginActivity extends AppCompatActivity {
 
     public String userEmail = "dans@test.com";
@@ -45,11 +47,16 @@ public class LoginActivity extends AppCompatActivity {
         Button loginSave = findViewById(R.id.loginButton);
         //creating the Intent to go to back to main
         Intent mainIntent = new Intent(this, MainActivity.class);
-        //send back the name with the intent
-        mainIntent.putExtra("firstName", userFirstName);
         //button listener
         loginSave.setOnClickListener(new View.OnClickListener(){
                 public void onClick (View v){
+                    //send back data with the intent
+                    mainIntent.putExtra("userEmail", emailBox.getText().toString());
+                    mainIntent.putExtra("hashedPass", DigestUtils.sha256Hex(passBox.getText().toString()));
+                    mainIntent.putExtra("firstName", userFirstName); // TODO: replace with DB grab
+                    mainIntent.putExtra("lastName", userLastName); // TODO: replace with DB grab
+                    mainIntent.putExtra("group", "debug1"); // TODO: replace with DB grab
+                    mainIntent.putExtra("manager", false); //TODO: replace with DB grab
                     startActivity(mainIntent);
                 }
             }
