@@ -2,6 +2,7 @@ package com.example.airrandsredux;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
         //declare message box
         EditText message = findViewById(R.id.listInput);
 
+        String firstNameIntent = getIntent().getStringExtra("firstName");
+
+        TextView firstName = findViewById(R.id.nameView);
+        if (firstNameIntent != null) {
+            firstName.setText("Good morning, " + firstNameIntent + "!");
+        }
+
         //this handles the "create list" button on the home screen, updates the textview, and adds them to an arraylist
         Button newList = findViewById(R.id.listButton);
         newList.setOnClickListener(new View.OnClickListener(){
@@ -53,12 +61,18 @@ public class MainActivity extends AppCompatActivity {
 
         //go to the login screen
         Button loginScreen = findViewById(R.id.signButton);
+        //creating the Intent to go to the login activity
+        Intent loginIntent = new Intent(this, LoginActivity.class);
+        //button listener
         loginScreen.setOnClickListener(new View.OnClickListener(){
                 public void onClick (View v){
-                    setContentView(R.layout.activity_login);
+                    startActivity(loginIntent);
+                   //setContentView(R.layout.activity_login);
                 }
             }
         );
+
+
 
     }
 

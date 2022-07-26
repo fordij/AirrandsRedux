@@ -28,11 +28,11 @@ public class MainActivity extends Activity {
         ArrayList<String> tasks = new ArrayList<String>();
 
         //debug tasks, will replace with database grab
-        tasks.add("Debug 1");
-        tasks.add("Debug 2");
-        tasks.add("Debug 3");
-        tasks.add("Debug 4");
-        tasks.add("Debug 5");
+        tasks.add("Finish app");
+        tasks.add("Call boss");
+        tasks.add("Pet a dog");
+        tasks.add("Finish DB");
+        //tasks.add("Debug 5");
 
         //init switch
         Switch switch1 = (Switch) findViewById(R.id.switch1);
@@ -66,9 +66,9 @@ public class MainActivity extends Activity {
                 switch4.setVisibility(View.VISIBLE);
                 Log.d("Debug tasks",tasks.get(3));
 
-                switch5.setText(tasks.get(4));
+                /*switch5.setText(tasks.get(4));
                 switch5.setVisibility(View.VISIBLE);
-                Log.d("Debug tasks",tasks.get(4));
+                Log.d("Debug tasks",tasks.get(4));*/
 
             }
         });
