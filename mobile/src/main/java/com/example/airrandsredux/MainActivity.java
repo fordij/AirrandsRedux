@@ -20,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //check to see if we were given an intent that we're not a manager
+        if (getIntent().getBooleanExtra("manager", false)) {
+            //if we were, go to the manager view
+            Intent employeeIntent = new Intent(this, employeeViewTasks.class);
+            startActivity(employeeIntent);
+        }
+
         //init textview
         TextView textView = findViewById(R.id.toDos);
 
@@ -67,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         loginScreen.setOnClickListener(new View.OnClickListener(){
                 public void onClick (View v){
                     startActivity(loginIntent);
-                   //setContentView(R.layout.activity_login);
                 }
             }
         );
