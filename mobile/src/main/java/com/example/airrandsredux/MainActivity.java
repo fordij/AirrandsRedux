@@ -66,6 +66,15 @@ public class MainActivity extends AppCompatActivity {
         }
         );
 
+        //this updates the firstname textview with "Sent!" if the user clicks the "send" button
+        Button sendButton = findViewById(R.id.sendTo);
+        sendButton.setOnClickListener(new View.OnClickListener(){
+                public void onClick (View v){
+                    firstName.setText("Sent!");
+                }
+            }
+        );
+
         //go to the login screen
         Button loginScreen = findViewById(R.id.signButton);
         //creating the Intent to go to the login activity

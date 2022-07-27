@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aldjs/Documents/AirrandsRedux/mobile/src/main/res/layout/activity_login.xml" value="0.7813807531380753" />
+        <entry key="..\:/Users/aldjs/Documents/AirrandsRedux/mobile/src/main/res/layout/activity_main.xml" value="0.7813807531380753" />
         <entry key="mobile/src/main/res/layout/activity_main.xml" value="0.25501983200294365" />
         <entry key="mobile/src/main/res/layout/activity_register.xml" value="0.375" />
         <entry key="wear/src/main/res/layout/activity_main.xml" value="0.3891213389121339" />
