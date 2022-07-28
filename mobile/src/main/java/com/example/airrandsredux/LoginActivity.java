@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                     mainIntent.putExtra("hashedPass", DigestUtils.sha256Hex(passBox.getText().toString()));
                     mainIntent.putExtra("firstName", userFirstName); // TODO: replace with DB grab
                     mainIntent.putExtra("lastName", userLastName); // TODO: replace with DB grab
-                    mainIntent.putExtra("group", "debug1"); // TODO: replace with DB grab
+                    mainIntent.putExtra("group", "1"); // TODO: replace with DB grab
                     mainIntent.putExtra("manager", false); //TODO: replace with DB grab
                     startActivity(mainIntent);
                 }
