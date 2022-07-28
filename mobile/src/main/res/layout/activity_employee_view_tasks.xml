@@ -6,4 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".employeeViewTasks">
 
+    <ImageView
+        android:id="@+id/airrandsEmpLogo"
+        android:layout_width="316dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_airrands" />
+
+    <TextView
+        android:id="@+id/splashEmpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Have a great day!"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/airrandsEmpLogo"
+        app:layout_constraintTop_toBottomOf="@+id/airrandsEmpLogo" />
+
+    <TextView
+        android:id="@+id/toDoSplashEmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:text="To-do:"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/airrandsEmpLogo"
+        app:layout_constraintTop_toBottomOf="@+id/airrandsEmpLogo" />
+
+    <TextView
+        android:id="@+id/tasksEmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/toDoSplashEmp"
+        app:layout_constraintTop_toBottomOf="@+id/toDoSplashEmp" />
+
+    <Button
+        android:id="@+id/empRefeshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="76dp"
+        android:text="Refesh tasks"
+        app:layout_constraintStart_toEndOf="@+id/toDoSplashEmp"
+        app:layout_constraintTop_toBottomOf="@+id/airrandsEmpLogo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

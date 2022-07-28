@@ -11,6 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.SQLException;
+import java.sql.Timestamp;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         if (getIntent().getBooleanExtra("manager", false)) {
             //if we were, go to the manager view
             Intent employeeIntent = new Intent(this, employeeViewTasks.class);
+            //forward all mainIntent data to the employeeIntent
+            employeeIntent.putExtra("userEmail", getIntent().getStringExtra("userEmail"));
+            employeeIntent.putExtra("hashedPass", getIntent().getStringExtra("hashedPass"));
+            employeeIntent.putExtra("firstName", getIntent().getStringExtra("firstName"));
+            employeeIntent.putExtra("lastName", getIntent().getStringExtra("lastName"));
+            employeeIntent.putExtra("group", getIntent().getStringExtra("group"));
+            employeeIntent.putExtra("manager", getIntent().getBooleanExtra("manager", false));
             startActivity(employeeIntent);
         }
 
@@ -47,19 +62,40 @@ public class MainActivity extends AppCompatActivity {
         Button newList = findViewById(R.id.listButton);
         newList.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
+                Log.d("debug group", getIntent().getStringExtra("group"));
                 //check if the input is empty, throw a toast if it is
                 if (message.getText().toString().compareTo("") == 0) {
                     Toast.makeText(getApplicationContext(), "Empty goal", Toast.LENGTH_SHORT).show();
                     //newList.setVisibility(View.INVISIBLE);
                 }
                 else {
-                    //add the task
-                    tasks.add(message.getText().toString());
-                    //modify the view by slapping more text on
-                    textView.setText(textView.getText() + "\n" + message.getText().toString());
-                    Log.d("Debug text", message.getText().toString() + " added");
-                    //clear textbox
-                    message.setText(null);
+                    //send each task to the database
+                    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost", "airrandsapp", "pass")) {
+                        try (Statement stmt = con.createStatement()) {
+                            //creates the query to insert the user into the database
+                            String query = "INSERT INTO work.task (taskID, taskName, group, beginDate) VALUES ('" + Math.floor(Math.random()*(9999999-0+1)+0) + "', '" + message.getText().toString() + "', '" + Integer.parseInt(getIntent().getStringExtra("group")) + "', '" + new Timestamp(System.currentTimeMillis()) + "', '" + "')";
+                            //executes the query
+                            stmt.executeUpdate(query);
+                            //send number of rows to log
+                            int rows = stmt.getUpdateCount();
+                            Log.d("Database update:", rows + " rows updated");
+                            Toast.makeText(getApplicationContext(), "Task added", Toast.LENGTH_LONG).show();
+                            //add the task
+                            tasks.add(message.getText().toString());
+                            //modify the view by slapping more text on
+                            textView.setText(textView.getText() + "\n" + message.getText().toString());
+                            Log.d("Debug text", message.getText().toString() + " added");
+                            //clear textbox
+                            message.setText(null);
+                        }
+                        catch (Exception e){
+                            Log.d("DB Error", "error adding to db");
+                            e.printStackTrace();
+                        }
+
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
                 }
 
             }

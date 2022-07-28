@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         android:text="Register"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,17 +99,29 @@
         android:hint="Manager Code (Optional)"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/regGroupBox"
-        app:layout_constraintTop_toBottomOf="@+id/regGroupBox" />
+        app:layout_constraintStart_toStartOf="@+id/regEmpID"
+        app:layout_constraintTop_toBottomOf="@+id/regEmpID" />
 
     <Button
         android:id="@+id/regRegButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
         android:text="Register"
         app:layout_constraintStart_toStartOf="@+id/regManagerBox"
         app:layout_constraintTop_toBottomOf="@+id/regManagerBox" />
+
+    <EditText
+        android:id="@+id/regEmpID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Employee ID"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/regGroupBox"
+        app:layout_constraintTop_toBottomOf="@+id/regGroupBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
