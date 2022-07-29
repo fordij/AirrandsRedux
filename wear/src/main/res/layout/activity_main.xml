@@ -91,19 +91,87 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:text="Switch"
-                    android:visibility="invisible"
+                    android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/switch5"
-                    app:layout_constraintTop_toBottomOf="@+id/switch5"
-                    tools:visibility="invisible" />
+                    app:layout_constraintTop_toBottomOf="@+id/switch5" />
+
+                <Switch
+                    android:id="@+id/switch7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/switch6"
+                    app:layout_constraintTop_toBottomOf="@+id/switch6" />
+
+                <Switch
+                    android:id="@+id/switch8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/switch7"
+                    app:layout_constraintTop_toBottomOf="@+id/switch7" />
+
+                <Switch
+                    android:id="@+id/switch9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/switch8"
+                    app:layout_constraintTop_toBottomOf="@+id/switch8" />
+
+                <Switch
+                    android:id="@+id/switch10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/switch9"
+                    app:layout_constraintTop_toBottomOf="@+id/switch9" />
+
+                <Switch
+                    android:id="@+id/switch13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Switch"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/switch10"
+                    app:layout_constraintTop_toBottomOf="@+id/switch10" />
 
                 <Button
                     android:id="@+id/getButton"
-                    android:layout_width="54dp"
+                    android:layout_width="65dp"
                     android:layout_height="38dp"
                     android:layout_marginStart="52dp"
                     android:text="get"
                     app:layout_constraintStart_toEndOf="@+id/todo"
                     app:layout_constraintTop_toTopOf="@+id/todo"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/showButton"
+                    android:layout_width="65dp"
+                    android:layout_height="38dp"
+                    android:text="show"
+                    app:layout_constraintStart_toEndOf="@+id/todo"
+                    app:layout_constraintStart_toStartOf="@+id/getButton"
+                    app:layout_constraintTop_toBottomOf="@+id/getButton"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/groupCodeButton"
+                    android:layout_width="65dp"
+                    android:layout_height="38dp"
+                    android:text="code"
+                    app:layout_constraintStart_toStartOf="@+id/showButton"
+                    app:layout_constraintTop_toBottomOf="@+id/showButton"
                     tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,16 +36,6 @@
         app:layout_constraintStart_toStartOf="@+id/airrandsEmpLogo"
         app:layout_constraintTop_toBottomOf="@+id/airrandsEmpLogo" />
 
-    <TextView
-        android:id="@+id/tasksEmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/toDoSplashEmp"
-        app:layout_constraintTop_toBottomOf="@+id/toDoSplashEmp" />
-
     <Button
         android:id="@+id/empRefeshButton"
         android:layout_width="wrap_content"
@@ -55,5 +45,22 @@
         android:text="Refesh tasks"
         app:layout_constraintStart_toEndOf="@+id/toDoSplashEmp"
         app:layout_constraintTop_toBottomOf="@+id/airrandsEmpLogo" />
+
+    <TextView
+        android:id="@+id/tasksEmp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/toDoSplashEmp"
+        app:layout_constraintTop_toBottomOf="@+id/toDoSplashEmp" />
+
+    <Button
+        android:id="@+id/displayTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display tasks"
+        app:layout_constraintStart_toStartOf="@+id/empRefeshButton"
+        app:layout_constraintTop_toBottomOf="@+id/empRefeshButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
